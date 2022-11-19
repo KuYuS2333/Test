@@ -34,14 +34,14 @@ def sentiment_analysis(sentence):
 def get_top2():
     url = "https://s.weibo.com/top/summary"
     headers={
-        'Host': 's.weibo.com',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Accept-Language': 'zh-CN,zh;q=0.9',
-        'Connection': 'keep-alive',
-        'Referer': 'https://weibo.com/',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'
-    }
+        'Host':'s.weibo.com',
+        'accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+        'accept-encoding':'gzip, deflate, br',
+       'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+       'Referer': 'https://weibo.com/',
+       'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42',
+       'cookie':'SINAGLOBAL=364328318699.485.1655211514565; UOR=,,hi.kejiwanjia.com; _s_tentry=-; Apache=3605892075168.0425.1668847355954; ULV=1668847356614:4:2:1:3605892075168.0425.1668847355954:1667910647412; SUB=_2A25OfNtVDeRhGeNJ7lsR-CbFzz2IHXVtCEudrDV8PUNbmtAKLVLXkW9NS66eQESrTZKjTUf_n2Fg8XB6Y09k5C1_; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WWEur1sYEmmOv27V4vD0SFF5JpX5KzhUgL.Fo-NSK.71hn4Sh22dJLoIX.LxKBLBonL1h5LxK-L12qLB-2LxKqLBozLBK2LxKqL1-eL1h.LxK.L1KzLBo2LxKML1-2L1hBLxK-L1KzLBonLxK.LBo2LB.Sk; ALF=1700388484; SSOLoginState=1668852485'
+}
     r = requests.get(url,headers=headers)
     print(r.status_code)
     html_xpath = etree.HTML(r.text)
@@ -72,14 +72,14 @@ def get_top2():
 def get_top():
     url = "https://s.weibo.com/top/summary"
     headers={
-        'Host': 's.weibo.com',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Accept-Language': 'zh-CN,zh;q=0.9',
-        'Connection': 'keep-alive',
-        'Referer': 'https://weibo.com/',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'
-    }
+        'Host':'s.weibo.com',
+        'accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+        'accept-encoding':'gzip, deflate, br',
+       'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+       'Referer': 'https://weibo.com/',
+       'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42',
+       'cookie':'SINAGLOBAL=364328318699.485.1655211514565; UOR=,,hi.kejiwanjia.com; _s_tentry=-; Apache=3605892075168.0425.1668847355954; ULV=1668847356614:4:2:1:3605892075168.0425.1668847355954:1667910647412; SUB=_2A25OfNtVDeRhGeNJ7lsR-CbFzz2IHXVtCEudrDV8PUNbmtAKLVLXkW9NS66eQESrTZKjTUf_n2Fg8XB6Y09k5C1_; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WWEur1sYEmmOv27V4vD0SFF5JpX5KzhUgL.Fo-NSK.71hn4Sh22dJLoIX.LxKBLBonL1h5LxK-L12qLB-2LxKqLBozLBK2LxKqL1-eL1h.LxK.L1KzLBo2LxKML1-2L1hBLxK-L1KzLBonLxK.LBo2LB.Sk; ALF=1700388484; SSOLoginState=1668852485'
+}
     r = requests.get(url,headers=headers)
     print(r.status_code)
     html_xpath = etree.HTML(r.text)
@@ -109,14 +109,14 @@ url2 = 'https://s.weibo.com/weibo?q=%23%E7%A1%AE%E4%BF%9D%E9%87%8D%E8%A6%81%E6%B
 def get_subtop(url=url2):
     data_detail_xpath = '//*[@id="pl_feedlist_index"]'
     headers={
-        'Host': 's.weibo.com',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Accept-Language': 'zh-CN,zh;q=0.9',
-        'Connection': 'keep-alive',
-        'Referer': 'https://weibo.com/',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'
-    }
+        'Host':'s.weibo.com',
+        'accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+        'accept-encoding':'gzip, deflate, br',
+       'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+       'Referer': 'https://weibo.com/',
+       'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42',
+       'cookie':'SINAGLOBAL=364328318699.485.1655211514565; UOR=,,hi.kejiwanjia.com; _s_tentry=-; Apache=3605892075168.0425.1668847355954; ULV=1668847356614:4:2:1:3605892075168.0425.1668847355954:1667910647412; SUB=_2A25OfNtVDeRhGeNJ7lsR-CbFzz2IHXVtCEudrDV8PUNbmtAKLVLXkW9NS66eQESrTZKjTUf_n2Fg8XB6Y09k5C1_; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WWEur1sYEmmOv27V4vD0SFF5JpX5KzhUgL.Fo-NSK.71hn4Sh22dJLoIX.LxKBLBonL1h5LxK-L12qLB-2LxKqLBozLBK2LxKqL1-eL1h.LxK.L1KzLBo2LxKML1-2L1hBLxK-L1KzLBonLxK.LBo2LB.Sk; ALF=1700388484; SSOLoginState=1668852485'
+}
     r = requests.get(url,headers=headers)
     # print(r.status_code)
     # html_xpath = etree.HTML(r.text)
